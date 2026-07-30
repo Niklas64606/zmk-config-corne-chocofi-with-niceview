@@ -2,6 +2,7 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
+* for later: &mo 2 needs to go back in. 
  */
 
 #include <behaviors.dtsi>
@@ -14,28 +15,28 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | SPC | LWR |   | ENT | RSE  | ALT |
+// | XXXX |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | XXXX |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | XXXX |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+//                    | GUI | SPC | LWR |   | ENT | BSPC | ALT |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &kp SPACE &mo 1    &kp RET &mo 2 &kp RALT
+                  &kp LGUI &kp SPACE &mo 1    &kp RET &kp BSPC &kp RALT
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// | XXXX |  1  |  2  |Enter|  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+// | XXXX |BSPC |  2  |Enter|  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
 // | XXXX |     |     | UP  |     |     |   | LFT | DWN |  UP | RGT |     |      |
 // | XXXX |     |Left | Down|Right|     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp RET      &bt BT_CLR   &bt BT_CLR_ALL &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &trans       &trans       &kp UP       &trans       &trans         &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &kp LEFT     &kp DOWN     &kp RIGHT    &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &trans     &kp BSPC     &trans       &kp RET      &bt BT_CLR   &bt BT_CLR_ALL    &trans   &kp N7   &kp N8 &kp N9    &kp N0 &trans
+   &trans     &trans       &trans       &kp UP       &trans       &trans            &trans   &kp N4   &kp N5 &kp N6    &trans &trans
+   &trans     &trans       &kp LEFT     &kp DOWN     &kp RIGHT    &trans            &trans   &kp N1   &kp N2 &kp N3    &trans &trans
+                          	        &kp LGUI     &trans       &kp SPACE         &kp RET  &kp N0   &kp RALT
                         >;
                 };
 
