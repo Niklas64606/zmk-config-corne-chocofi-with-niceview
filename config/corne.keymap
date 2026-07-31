@@ -27,11 +27,7 @@
             key-positions = <1 2>;
             bindings = <&kp ESC>;
             };
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <1 13>;
-            bindings = <&kp TAB>;
-        };
+
         // U + I -> Double Quote (")
         combo_dqt {
             timeout-ms = <50>;
@@ -85,6 +81,13 @@
             timeout-ms = <50>;
             key-positions = <13 25>;
             bindings = <&kp PIPE>;
+        };
+
+        // I + O + P -> Enter
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <8 9 10>;
+            bindings = <&kp RET>;
         };
 
         // S + X -> Tilde (~)
@@ -143,7 +146,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
    &trans   &kp BSPC      &trans        &kp RET      &trans        &kp K_SCROLL_UP            &trans   &kp N7  &kp N8 &kp N9  &kp N0   &trans
-   &trans   &kp LC(TAB)   &kp LC(LEFT)  &kp UP       &kp LC(RIGHT) &kp K_SCROLL_DOWN          &trans   &kp N4  &kp N5 &kp N6  &trans   &trans
+   &trans   &kp TAB   &kp LC(LEFT)  &kp UP       &kp LC(RIGHT) &kp K_SCROLL_DOWN          &trans   &kp N4  &kp N5 &kp N6  &trans   &trans
    &trans   &kp HOME      &kp LEFT      &kp DOWN     &kp RIGHT     &kp END                    &trans   &kp N1  &kp N2 &kp N3  &trans   &trans
                                         &kp LGUI     &trans        &kp SPACE                  &kp RET  &kp N0  &kp N0
             >;
@@ -156,9 +159,9 @@
 // | XXXX |     |     |     |     |     |   |  _  |  !  |  @  |  #  | "|" | XXXX |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-   &trans   &trans   &trans   &trans   &trans   &trans            &kp QUESTION &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans
-   &trans   &trans   &trans   &trans   &trans   &bt BT_CLR_ALL    &kp MINUS    &kp DLLR  &kp PRCNT       &kp CARET &kp BSLH &trans
-   &trans   &trans   &trans   &trans   &trans   &bt BT_CLR        &kp UNDER    &kp EXCL  &kp AT          &kp HASH &kp PIPE &trans
+   &trans   &trans   &trans   &trans   &trans   &trans            &kp QUESTION &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp PLUS     &trans
+   &trans   &trans   &trans   &trans   &trans   &bt BT_CLR_ALL    &kp MINUS    &kp DLLR  &kp PRCNT       &kp CARET &kp BSLH    &trans
+   &trans   &trans   &trans   &trans   &trans   &bt BT_CLR        &kp UNDER    &kp EXCL  &kp AT          &kp HASH &kp PIPE     &trans
                               &kp LGUI &trans   &kp SPACE         &kp RET      &trans    &kp RALT
             >;
         };
