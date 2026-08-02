@@ -170,7 +170,7 @@
    &trans   &kp BSPC      &trans        &kp RET      &trans        &msc MOVE_Y(10)            &select_line   &kp N7  &kp N8 &kp N9  &kp N0   &trans
    &trans   &kp TAB   &kp LC(LEFT)  &kp UP       &kp LC(RIGHT)     &msc MOVE_Y(-10)             &trans   &kp N4  &kp N5 &kp N6  &trans   &trans
    &trans   &kp HOME      &kp LEFT      &kp DOWN     &kp RIGHT     &kp END                     &trans   &kp N1  &kp N2 &kp N3  &trans   &trans
-                                        &kp LGUI     &trans        &kp SPACE                   &kp RET  &kp N0  &kp N0
+                                        &kp LGUI     &trans        &kp SPACE                   &kp RET  &trans  &kp N0
             >;
         };
 
