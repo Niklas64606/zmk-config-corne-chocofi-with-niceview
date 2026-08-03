@@ -148,6 +148,20 @@
             key-positions = <32 33>;
             bindings = <&kp LS(RBKT)>;
         };
+
+        // A + E -> ä / Ä
+        combo_se_a_umlaut {
+            timeout-ms = <50>;
+            key-positions = <13 3>;
+            bindings = <&kp SQT>;
+        };
+
+        // A + Ö (SEMI) -> å / Å
+        combo_se_a_ring {
+            timeout-ms = <50>;
+            key-positions = <13 22>;
+            bindings = <&kp LBKT>;
+        };
     };
 
     // -------------------------------------------------------------------------
