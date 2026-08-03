@@ -66,7 +66,7 @@
     combos {
         compatible = "zmk,combos";
 
-combo_esc {
+        combo_esc {
             timeout-ms = <50>;
             key-positions = <1 2>;
             bindings = <&kp ESC>;
@@ -141,11 +141,12 @@ combo_esc {
             key-positions = <14 26>;
             bindings = <&kp RA(RBKT)>;
         };
-        // Comma + Dot -> Caret (^) [AltGr + ¨ key in SE layout]
+
+        // Comma + Dot -> Caret (^) [Shift + ¨ key in SE layout]
         combo_caret {
             timeout-ms = <50>;
             key-positions = <32 33>;
-            bindings = <&kp LS(RBKT);>
+            bindings = <&kp LS(RBKT)>;
         };
     };
 
@@ -159,39 +160,39 @@ combo_esc {
 // -----------------------------------------------------------------------------------------
 // | XXXX |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | XXXX |
 // | XXXX |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Ö  | XXXX |
-// | XXXX |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | XXXX |
+// | XXXX |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  '  | XXXX |
 //                    | GUI | SPC | LWR |   | ENT | BSPC | ALT |
             bindings = <
    &trans   &kp Q         &kp W         &kp E        &kp R        &kp T       &kp Y     &kp U          &kp I          &kp O        &kp P                  &trans
-   &trans   &kp A   &hml LALT S   &hml LCTRL D &hml LSHIFT F &kp G       &kp H     &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L       &kp SEMI               &trans
-   &trans   &lt_z 3 Z     &kp X         &kp C        &kp V        &kp B       &kp N     &kp M          &kp COMMA      &kp DOT      &kp SQT       &trans
+   &trans   &kp A   &hml LALT S   &hml LCTRL D &hml LSHIFT F &kp G       &kp H     &hmr RSHIFT J  &hmr RCTRL K   &hmr RALT L  &kp SEMI               &trans
+   &trans   &lt_z 3 Z     &kp X         &kp C        &kp V        &kp B       &kp N     &kp M          &kp COMMA      &kp DOT      &kp SQT                &trans
                                         &kp LGUI     &kp SPACE    &mo 1       &kp LSHIFT &kp BSPC      &mo 2
             >;
         };
 
         lower_layer {
 // -----------------------------------------------------------------------------------------
-// | XXXX |BSPC |  2  |Enter|  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | XXXX |
-// | XXXX |     |     | UP  |     |     |   | LFT | DWN |  UP | RGT |     | XXXX |
-// | XXXX |     |Left | Down|Right|     |   |     |     |     |     |     | XXXX |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// | XXXX |BSPC | M_UP|Enter|M_DWN| DEL |   |SEL_L|  7  |  8  |  9  |  0  | XXXX |
+// | XXXX | TAB |L_LFT| UP  |L_RGT|  (  |   |  )  |  4  |  5  |  6  |     | XXXX |
+// | XXXX | HOME| LEFT| DOWN|RIGHT| END |   |     |  1  |  2  |  3  |     | XXXX |
+//                    | BACK|     | SPC |   | ENT |     |  0  |
             bindings = <
-   &trans   &kp BSPC  &msc MOVE_Y(10)   &kp RET      &msc MOVE_Y(-10)  &kp DEL                   &select_line   &kp N7  &kp N8 &kp N9  &kp N0   &trans
-   &trans   &kp TAB   &kp LC(LEFT)      &kp UP       &kp LC(RIGHT)     &kp LS(N8)                &kp LS(N9)     &kp N4  &kp N5 &kp N6  &trans   &trans
-   &trans   &kp HOME      &kp LEFT      &kp DOWN     &kp RIGHT         &kp END                   &trans         &kp N1  &kp N2 &kp N3  &trans   &trans
-                                    &kp C_AC_BACK     &trans           &kp SPACE                 &kp RET        &trans  &kp N0
+   &trans   &kp BSPC      &msc MOVE_Y(10)  &kp RET      &msc MOVE_Y(-10)  &kp DEL      &select_line   &kp N7  &kp N8 &kp N9  &kp N0   &trans
+   &trans   &kp TAB       &kp LC(LEFT)     &kp UP       &kp LC(RIGHT)     &kp LS(N8)   &kp LS(N9)     &kp N4  &kp N5 &kp N6  &trans   &trans
+   &trans   &kp HOME      &kp LEFT         &kp DOWN     &kp RIGHT         &kp END      &trans         &kp N1  &kp N2 &kp N3  &trans   &trans
+                                           &kp C_AC_BACK &trans           &kp SPACE    &kp RET        &trans  &kp N0
             >;
         };
 
-raise_layer {
+        raise_layer {
 // -----------------------------------------------------------------------------------------
 // | XXXX |     |     |     |     |     |   |  ?  |  &  |  *  |  (  |  +  | XXXX |
-// | XXXX |     |     |     |     |     |   |  -  |  $  |  %  |  ^  | Del | XXXX |
+// | XXXX |     |     |     |     |     |   |  -  |  $  |  %  |  ^  | DEL | XXXX |
 // | XXXX |     |     |     |     |     |   |  _  |  !  |  @  |  #  |  +  | XXXX |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
    &trans   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans      &trans            &kp LS(MINUS) &kp LS(N6) &kp LS(BSLH)  &kp LS(N8)  &kp MINUS     &trans
-   &trans   &trans   &trans   &trans   &trans   &bt BT_CLR_ALL       &kp SLASH     &kp RA(N4) &kp LS(N5)    &kp RA(RBKT) &kp DEL  &trans
+   &trans   &trans   &trans   &trans   &trans   &bt BT_CLR_ALL       &kp SLASH     &kp RA(N4) &kp LS(N5)    &kp RA(RBKT) &kp DEL       &trans
    &trans   &trans   &trans   &trans   &trans   &bt BT_CLR           &kp LS(SLASH) &kp LS(N1) &kp RA(N2)    &kp LS(N3)   &kp MINUS     &trans
                               &kp LGUI &trans   &kp SPACE            &kp RET       &trans     &kp RALT
             >;
@@ -206,7 +207,7 @@ raise_layer {
             bindings = <
    &trans      &trans      &trans      &trans     &trans    &kp LC(T)          &kp QUESTION &kp AMPS  &kp KP_MULTIPLY &kp LPAR   &kp RPAR         &trans
    &trans      &kp LC(A)   &kp LC(S)   &trans     &kp LC(F) &kp C_AC_SEARCH    &kp MINUS    &kp DLLR  &kp PRCNT       &kp CARET  &kp BSLH         &trans
-   &trans      &trans      &kp LC(X)   &kp LC(C)  &kp LC(V) &trans             &kp UNDER    &kp EXCL  &kp AT          &kp HASH   &kp PIPE         &trans
+   &trans      &kp LC(X)   &kp LC(C)   &kp LC(V)  &trans    &trans             &kp UNDER    &kp EXCL  &kp AT          &kp HASH   &kp PIPE         &trans
                               &kp LGUI &trans   &kp SPACE &kp RET              &trans    &kp RALT
             >;
         };
