@@ -38,18 +38,17 @@
                 <&macro_tap &kp F &kp N6 &kp RET>;
         };
 
-// Uppercase Ö: Ctrl+Shift+U -> d6 -> Enter (releases Shift during hex entry)
+// Uppercase Ö: Ctrl+Shift+U -> 00d6 -> Enter
         macro_se_o_upper: macro_se_o_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <15>;
             tap-ms = <15>;
             bindings = 
-                <&macro_release &kp LSHFT &kp RSHFT>,
                 <&macro_press &kp LCTRL &kp LSHFT>,
                 <&macro_tap &kp U>,
                 <&macro_release &kp LCTRL &kp LSHFT>,
-                <&macro_tap &kp D &kp N6 &kp RET>;
+                <&macro_tap &kp N0 &kp N0 &kp D &kp N6 &kp RET>;
         };
     };
 
