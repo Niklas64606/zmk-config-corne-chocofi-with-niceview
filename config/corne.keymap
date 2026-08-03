@@ -38,16 +38,17 @@
                 <&macro_tap &kp F &kp N6 &kp RET>;
         };
 
-// Uppercase Ö: Triggers Ctrl+Shift+U then sends 00d6
+// Uppercase Ö: Triggers Ctrl+Shift+U -> brief pause -> 00d6 -> Enter
         macro_se_o_upper: macro_se_o_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings = 
                 <&macro_press &kp LCTRL &kp LSHFT>,
                 <&macro_tap &kp U>,
-                <&macro_release &kp LCTRL &kp LSHFT>,
+                <&macro_release &kp LSHFT &kp LCTRL>,
+                <&macro_wait_time 50>,
                 <&macro_tap &kp N0 &kp N0 &kp D &kp N6 &kp RET>;
         };
     };
