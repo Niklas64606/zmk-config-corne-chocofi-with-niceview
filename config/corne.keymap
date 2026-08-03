@@ -25,23 +25,38 @@
                        <&macro_release &kp LSHIFT>;
         };
 
-        // Lowercase ö (AltGr + " then o)
+// Lowercase ö: AltGr + " (Shift + ') then o
         macro_se_o_lower: macro_se_o_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings = <&kp RALT &kp DQT &kp O>;
+            bindings = 
+                <&macro_press &kp RALT>,
+                <&macro_press &kp LSHFT>,
+                <&macro_tap &kp SQT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RALT>,
+                <&macro_tap &kp O>;
         };
 
-        // Uppercase Ö (AltGr + " then Shift+O)
+        // Uppercase Ö: AltGr + " (Shift + ') then O (Shift + o)
         macro_se_o_upper: macro_se_o_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
             tap-ms = <10>;
-            bindings = <&kp RALT &kp DQT &macro_press &kp LSHFT>, <&kp O>, <&macro_release &kp LSHFT>;
+            bindings = 
+                <&macro_press &kp RALT>,
+                <&macro_press &kp LSHFT>,
+                <&macro_tap &kp SQT>,
+                <&macro_release &kp LSHFT>,
+                <&macro_release &kp RALT>,
+                <&macro_press &kp LSHFT>,
+                <&macro_tap &kp O>,
+                <&macro_release &kp LSHFT>;
         };
+    };
     };    
 
 
@@ -62,7 +77,8 @@
             bindings = <&mo>, <&kp>;
         };
 
-se_o: se_o {
+// Sends ö by default, Ö when Shift is held
+        se_o: se_o {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&macro_se_o_lower>, <&macro_se_o_upper>;
