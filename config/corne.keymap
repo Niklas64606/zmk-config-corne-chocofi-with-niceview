@@ -145,7 +145,7 @@ combo_esc {
         combo_caret {
             timeout-ms = <50>;
             key-positions = <32 33>;
-            bindings = <&kp RA(RBKT)>;
+            bindings = <&kp LS(RBKT);
         };
     };
 
@@ -176,22 +176,22 @@ combo_esc {
 // | XXXX |     |Left | Down|Right|     |   |     |     |     |     |     | XXXX |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-   &trans   &kp BSPC      &trans        &kp RET      &trans        &kp DEL                   &select_line   &kp N7  &kp N8 &kp N9  &kp N0   &trans
-   &trans   &kp TAB   &kp LC(LEFT)      &kp UP       &kp LC(RIGHT) &msc MOVE_Y(10)           &trans         &kp N4  &kp N5 &kp N6  &trans   &trans
-   &trans   &kp HOME      &kp LEFT      &kp DOWN     &kp RIGHT     &kp END                   &trans         &kp N1  &kp N2 &kp N3  &trans   &trans
-                            &kp C_AC_BACK     &msc MOVE_Y(-10)     &kp SPACE                 &kp RET        &trans  &kp N0
+   &trans   &kp BSPC  &msc MOVE_Y(10)   &kp RET      &msc MOVE_Y(-10)  &kp DEL                   &select_line   &kp N7  &kp N8 &kp N9  &kp N0   &trans
+   &trans   &kp TAB   &kp LC(LEFT)      &kp UP       &kp LC(RIGHT)     &kp LS(N8)                &kp LS(N9)     &kp N4  &kp N5 &kp N6  &trans   &trans
+   &trans   &kp HOME      &kp LEFT      &kp DOWN     &kp RIGHT         &kp END                   &trans         &kp N1  &kp N2 &kp N3  &trans   &trans
+                                    &kp C_AC_BACK     &trans           &kp SPACE                 &kp RET        &trans  &kp N0
             >;
         };
 
 raise_layer {
 // -----------------------------------------------------------------------------------------
 // | XXXX |     |     |     |     |     |   |  ?  |  &  |  *  |  (  |  +  | XXXX |
-// | XXXX |     |     |     |     |     |   |  -  |  $  |  %  |  ^  |  \  | XXXX |
+// | XXXX |     |     |     |     |     |   |  -  |  $  |  %  |  ^  | Del | XXXX |
 // | XXXX |     |     |     |     |     |   |  _  |  !  |  @  |  #  |  +  | XXXX |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
    &trans   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans      &trans            &kp LS(MINUS) &kp LS(N6) &kp LS(BSLH)  &kp LS(N8)  &kp MINUS     &trans
-   &trans   &trans   &trans   &trans   &trans   &bt BT_CLR_ALL       &kp SLASH     &kp RA(N4) &kp LS(N5)    &kp RA(RBKT) &kp RA(MINUS) &trans
+   &trans   &trans   &trans   &trans   &trans   &bt BT_CLR_ALL       &kp SLASH     &kp RA(N4) &kp LS(N5)    &kp RA(RBKT) &kp DEL  &trans
    &trans   &trans   &trans   &trans   &trans   &bt BT_CLR           &kp LS(SLASH) &kp LS(N1) &kp RA(N2)    &kp LS(N3)   &kp MINUS     &trans
                               &kp LGUI &trans   &kp SPACE            &kp RET       &trans     &kp RALT
             >;
