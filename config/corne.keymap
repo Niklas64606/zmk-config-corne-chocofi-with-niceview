@@ -162,6 +162,19 @@
             key-positions = <13 22>;
             bindings = <&kp LBKT>;
         };
+        // V + D + R -> Less-Than (<) [NON_US_BSLH key in SE layout]
+        combo_lt {
+            timeout-ms = <50>;
+            key-positions = <28 15 3>;
+            bindings = <&kp NON_US_BSLH>;
+        };
+
+        // M + K + U -> Greater-Than (>) [Shift + NON_US_BSLH in SE layout]
+        combo_gt {
+            timeout-ms = <50>;
+            key-positions = <31 20 7>;
+            bindings = <&kp LS(NON_US_BSLH)>;
+        };
     };
 
     // -------------------------------------------------------------------------
