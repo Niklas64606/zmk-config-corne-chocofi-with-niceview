@@ -25,32 +25,28 @@
                        <&macro_release &kp LSHIFT>;
         };
 
-        // Lowercase ö: AltGr + " (Shift + ') then o
+// Lowercase ö: AltGr + U (umlaut dead key) then o
         macro_se_o_lower: macro_se_o_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             bindings = 
                 <&macro_press &kp RALT>,
-                <&macro_press &kp LSHFT>,
-                <&macro_tap &kp SQT>,
-                <&macro_release &kp LSHFT>,
+                <&macro_tap &kp U>,
                 <&macro_release &kp RALT>,
                 <&macro_tap &kp O>;
         };
 
-        // Uppercase Ö: AltGr + " (Shift + ') then O (Shift + o)
+        // Uppercase Ö: AltGr + U (umlaut dead key) then Shift + O
         macro_se_o_upper: macro_se_o_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             bindings = 
                 <&macro_press &kp RALT>,
-                <&macro_press &kp LSHFT>,
-                <&macro_tap &kp SQT>,
-                <&macro_release &kp LSHFT>,
+                <&macro_tap &kp U>,
                 <&macro_release &kp RALT>,
                 <&macro_press &kp LSHFT>,
                 <&macro_tap &kp O>,
