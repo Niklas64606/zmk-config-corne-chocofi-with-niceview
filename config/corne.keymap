@@ -38,13 +38,15 @@
                 <&macro_tap &kp F &kp N6 &kp RET>;
         };
 
-// Uppercase Ö: Ctrl+Shift+U -> 00d6 -> Enter
+        // Uppercase Ö: Ctrl+Shift+U -> 00d6 -> Enter
+        // Releases Shift before sending keycodes to avoid physical Shift leak
         macro_se_o_upper: macro_se_o_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <15>;
             tap-ms = <15>;
             bindings = 
+                <&macro_release &kp LSHFT &kp RSHFT>,
                 <&macro_press &kp LCTRL &kp LSHFT>,
                 <&macro_tap &kp U>,
                 <&macro_release &kp LCTRL &kp LSHFT>,
@@ -65,12 +67,13 @@
             bindings = <&mo>, <&kp>;
         };
 
-        // Sends ö by default, Ö when Shift is held
+// Shift-morph with keep-mods cleared (prevents shift from leaking into macro)
         se_o: se_o {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&macro_se_o_lower>, <&macro_se_o_upper>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <0>;
         };
 
         hml: home_row_mod_left {
