@@ -224,7 +224,7 @@
 // | XXXX |     |     |     |     |     |   |  _  |  !  |  @  |  #  |  +  | XXXX |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-   &trans   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans      &trans            &kp LS(MINUS) &kp LS(N6) &kp LS(BSLH)  &kp LS(N8)  &kp MINUS     &trans
+   &trans   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &trans      &trans            &kp LS(MINUS) &kp LS(N6) &kp LS(BSLH)  &kp LS(MINUS)  &kp MINUS     &trans
    &trans   &trans   &trans   &trans   &trans   &bt BT_CLR_ALL       &kp SLASH     &kp RA(N4) &kp LS(N5)    &kp RA(RBKT) &kp DEL       &trans
    &trans   &trans   &trans   &trans   &trans   &bt BT_CLR           &kp LS(SLASH) &kp LS(N1) &kp RA(N2)    &kp LS(N3)   &kp MINUS     &trans
                               &kp LGUI &trans   &kp SPACE            &kp RET       &trans     &kp RALT
