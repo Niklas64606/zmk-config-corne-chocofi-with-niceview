@@ -211,9 +211,9 @@
 // | XXXX |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  '  | XXXX |
 //                    | GUI | SPC | LWR |   | ENT | BSPC | ALT |
             bindings = <
-   &trans   &kp Q         &kp W         &kp E        &kp R        &kp T                     &kp Y     &kp U          &kp I          &kp O        &kp P                  &trans
-   &trans   &kp A   &kp S   &hml LCTRL D &kp F &kp G                                        &kp H     &kp J          &kp K          &kp L        &kp SEMI               &trans
-   &trans   &lt_z 3 Z     &hml LALT X         &kp C        &kp V        &kp B               &kp N     &kp M          &kp COMMA      &kp DOT      &kp BSLH               &trans
+   &trans   &kp Q         &kp W         &kp E        &kp R        &kp T                     &kp Y      &kp U         &kp I          &kp O        &kp P                  &trans
+   &trans   &kp A         &kp S         &hml LCTRL D &kp F        &kp G                     &kp H      &kp J         &kp K          &kp L        &kp SEMI               &trans
+   &trans   &lt_z 3 Z     &hml LALT X   kp C         &kp V        &kp B                     &kp N      &kp M         &kp COMMA      &kp DOT      &kp BSLH               &trans
                                         &kp LGUI     &kp SPACE    &mo 1                     &kp LSHIFT &kp BSPC      &mo 2
             >;
         };
@@ -226,7 +226,7 @@
 //                    | BACK|     | SPC |   | ENT |     |  0  |
             bindings = <
    &trans   &kp BSPC      &msc MOVE_Y(10)  &kp RET      &msc MOVE_Y(-10)  &kp DEL      &select_line   &kp N7  &kp N8 &kp N9  &kp LS(N0)   &trans
-   &trans   &kp TAB       &kp LC(LEFT)     &kp UP       &kp LC(RIGHT)     &kp LS(N8)   &kp LS(N9)     &kp N4  &kp N5 &kp N6  &trans      &trans
+   &trans   &kp TAB       &kp LC(LEFT)     &kp UP       &hml LSHIFT LC(RIGHT)     &kp LS(N8)   &kp LS(N9)     &kp N4  &kp N5 &kp N6  &trans      &trans
    &trans   &kp HOME      &kp LEFT         &kp DOWN     &kp RIGHT         &kp END      &kp LCTRL      &kp N1  &kp N2 &kp N3  &kp LS(N0)   &trans
                                            &kp C_AC_BACK &trans           &kp SPACE    &trans        &trans  &kp N0
             >;
