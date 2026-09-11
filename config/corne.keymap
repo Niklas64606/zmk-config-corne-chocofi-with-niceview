@@ -262,7 +262,7 @@
 // | XXXX |     |     |     |     |     |   |  _  |  !  |  @  |  #  | "|" | XXXX |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
             bindings = <
-   &trans      &trans      &trans      &trans     C_AC_GOTO    &kp LC(T)                        &kp QUESTION &kp F7    &kp F8       &kp F9   &kp F10         &trans
+   &trans      &trans      &trans      &trans     &C_AC_GOTO    &kp LC(T)                        &kp QUESTION &kp F7    &kp F8       &kp F9   &kp F10         &trans
    &trans      &kp LC(A)   &kp LA(TAB)   &kp K_CMENU     &kp K_APP_SELECT &kp C_AC_SEARCH    &kp MINUS    &kp F4    &kp F5       &kp F6   &kp F11         &trans
    &trans      &kp LC(X)   &kp LC(C)   &kp LC(V)  &trans    &trans                           &kp UNDER    &kp F1    &kp F2       &kp F3   &kp F12         &trans
                               &kp LGUI &trans   &kp SPACE                                    &kp RET  &trans    &kp RALT
